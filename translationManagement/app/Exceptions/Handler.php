@@ -50,23 +50,23 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $exception)
     {
-        // if ($exception instanceof ValidationException) {
-        //     return response()->json([
-        //         'error' => 'true',
-        //         'data' => $exception->errors(),
-        //         'message' => 'Sorry, the request is invalid'
-        //     ], 422);
-        // } elseif ($exception instanceof QueryException) {
-        //     return response()->json([
-        //         'error' => 'true',
-        //         'message' => $exception->getMessage()
-        //     ], 500);
-        // } elseif ($exception instanceof \Exception) {
-        //     return response()->json([
-        //         'error' => 'true',
-        //         'message' => $exception->getMessage()
-        //     ], 500);
-        // }
+        if ($exception instanceof ValidationException) {
+            return response()->json([
+                'error' => 'true',
+                'data' => $exception->errors(),
+                'message' => 'Sorry, the request is invalid'
+            ], 422);
+        } elseif ($exception instanceof QueryException) {
+            return response()->json([
+                'error' => 'true',
+                'message' => $exception->getMessage()
+            ], 500);
+        } elseif ($exception instanceof \Exception) {
+            return response()->json([
+                'error' => 'true',
+                'message' => $exception->getMessage()
+            ], 500);
+        }
         return parent::render($request, $exception);
     }
 }
