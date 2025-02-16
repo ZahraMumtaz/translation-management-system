@@ -34,7 +34,7 @@ This project is set up using Docker, with a pre-configured PHP environment and r
 - Update the `.env` file accordingly to ensure correct database configuration.
 
 **Point To Note**
-Command to migrate and seed may take time as the `TranslationSeeder` creatng 100K records as per the requirement
+Command to migrate and seed may take time as the `TranslationSeeder` creatng 100K records as per the requirement. I kept the count as 100 it's taking too much time.
 
 ### .env File Configuration
 ```plaintext
