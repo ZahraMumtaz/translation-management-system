@@ -33,6 +33,9 @@ This project is set up using Docker, with a pre-configured PHP environment and r
 - The **inside** `.env` file should have the same credentials for database.
 - Update the `.env` file accordingly to ensure correct database configuration.
 
+**Point To Note**
+Command to migrate and seed may take time as the `TranslationSeeder` creatng 100K records as per the requirement
+
 ### .env File Configuration
 ```plaintext
 DB_CONNECTION=mysql
@@ -78,3 +81,9 @@ Expected response:
   "message": "API is UP and running"
 }
 ```
+
+## Endpoints
+The base URL for the API is: 
+```http://127.0.0.1:8000```
+For a detailed list of API endpoints, request formats, responses, and authentication requirements, please refer to the Postman API documentation:
+[API Documentation](https://documenter.getpostman.com/view/8411947/2sAYXEFJuC)
